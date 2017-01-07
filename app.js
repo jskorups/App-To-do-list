@@ -28,6 +28,12 @@ function removeItem () {
 
 }
 
+function completeItem() {
+
+    var item = this.parentNode.parentNode;
+    var parent = item.parentNode;
+}
+
 //add a new item to the
 function addItemTodo(text) {
 
@@ -51,6 +57,9 @@ function addItemTodo(text) {
     var complete = document.createElement('button');
     complete.classList.add('complete');
     complete.innerHTML = completeSVG;
+
+    // Completeing item
+    complete.addEventListener('click', completeItem);
 
     buttons.appendChild(remove);
     buttons.appendChild(complete);
