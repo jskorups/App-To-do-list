@@ -32,6 +32,13 @@ function completeItem() {
 
     var item = this.parentNode.parentNode;
     var parent = item.parentNode;
+    var id = parent.id;
+
+    var target =  (id === 'todo') ? document.getElementById('completed'):document.getElementById('todo');
+
+    parent.removeChild(item);
+    target.insertBefore(item, target.childNodes[0]);
+
 }
 
 //add a new item to the
